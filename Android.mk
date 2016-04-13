@@ -14,6 +14,8 @@
 
 SAM_ROOT := $(call my-dir)
 
+ifneq ($(TARGET_PRODUCT),exodus_n7100)
+
 # Exynos 4
 ifeq ($(TARGET_BOARD_PLATFORM),exynos4)
 ifeq ($(TARGET_SOC),exynos4210)
@@ -41,4 +43,6 @@ include $(SAM_ROOT)/liblights/Android.mk
 include $(SAM_ROOT)/modemloader/Android.mk
 include $(SAM_ROOT)/power/Android.mk
 include $(SAM_ROOT)/ril/Android.mk
+endif
+
 endif
